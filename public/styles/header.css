@@ -1,0 +1,16 @@
+.image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-color: #d79923;
+  background-image: 
+    url("./images/batthern.png");
+}
+
+/* your name string under profile pic */
+.image h2 {
+  margin-top: 0;
+}
+
