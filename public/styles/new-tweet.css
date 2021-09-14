@@ -1,3 +1,10 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 .new-tweet {
   padding: 0% 5%;
   text-align: left;
@@ -38,13 +45,56 @@ padding: 10px 10px;
 font-weight: 900;
 }
 
-/* form {
-  background-color: red;
+/* color for counter from composer-char-counter.js file*/
+.red {
+  color: red; 
+}
+
+/* tweets-container */
+header {
   display: flex;
-  align-items: stretch;
-  text-align: center;
-} */
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
 
-/* .counter {
+header .fas {
+  display: flex;
+  justify-content: space-between;
+}
 
-} */
+footer {
+  border-bottom: none;
+  border-top: 5px solid;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 25px;
+
+}
+
+.timestamp {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: lighter;
+}
+/* icons */
+footer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+article {
+  border:solid;
+  padding: 15px;
+  
+}
+
+/* hover selectors */
+article:hover {
+  box-shadow: 10px 5px 5px gray;
+}
+
+.fas:hover {
+  color:lightskyblue;
+}
