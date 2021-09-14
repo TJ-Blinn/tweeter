@@ -15,14 +15,15 @@ html {
   color: #ffff;
   font-family: 'Bungee', cursive, sans-serif;
   height: 120px;
-  /* position: absolute; */
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .logo {
   font-size: 50px;
   font-weight: 400;
-  margin: 1.5em;
-  
+  margin: 1.5em;  
 }
 
 .nav-text {
@@ -45,6 +46,11 @@ html {
 
 .fas {
   display: flex;
-  color: red;
+  color:royalblue;
+}
+
+.fas.fa-angle-double-down {
+  display: flex;
+  color:red;
 }
 

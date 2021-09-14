@@ -54,7 +54,6 @@ font-weight: 900;
 header {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
   align-items: center;
 }
 
@@ -74,8 +73,7 @@ footer {
 
 .timestamp {
   margin-top: 10px;
-  font-size: 16px;
-  font-weight: lighter;
+  font-family: 'Source Sans Pro';
 }
 /* icons */
 footer div {
@@ -89,12 +87,23 @@ article {
   padding: 15px;
   
 }
+.handle {
+  margin-left: auto;
+}
+
+.footer_icons {
+  margin-left: auto;
+}
+.footer_icons i{
+  margin-top: 10px;
+  padding: 2px;
+}
 
 /* hover selectors */
 article:hover {
   box-shadow: 10px 5px 5px gray;
 }
 
-.fas:hover {
+.footer_icons i:hover {
   color:lightskyblue;
 }

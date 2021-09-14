@@ -5,6 +5,9 @@
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
 
+  <!-- timeago -->
+  <script>https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js</script>
+
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
@@ -91,8 +94,37 @@
         </div>
 
       </form>
-    </section>
 
+      <!-- new section container for all the tweets -->
+      <section class="tweets-container">
+        <article>
+          <header>
+            <i class="fas fa-user-astronaut"></i>
+            <h3>Ford Prefect</h3><span class="handle">@FPrefect</span>
+          </header>
+          <main>
+            <p>There is a theory which states that if ever anyone discovers exactly what the Universe is for and why it
+              is
+              here, it will instantly disappear and be replaced by something even more bizarre and inexplicable. There
+              is
+              another theory which states that this has already happened.</p>
+          </main>
+
+          <footer>
+            <div>
+              <span class="timestamp">10 days ago</span>
+              <div class="footer_icons">
+                <i class="fas fa-flag"></i>
+                <i class="fas fa-retweet"></i>
+                <i class="fas fa-heart"></i>
+              </div>
+            </div>
+
+          </footer>
+        </article>
+      </section>
+
+    </section>
 
   </main>
 </body>
