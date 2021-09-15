@@ -4,10 +4,34 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// createTweetElement that takes in a tweet object and is responsible for returning a tweet <article> element containing the entire HTML structure of the tweet.
-// tweet data object: user: {"name": "Newton", "avatars": "https://url.com", "handle": "@handle"}
 $(document).ready(function() {
+
+  const renderTweets = function(tweets) {
+    // loops through tweets
+    // calls createTweetElement for each tweet
+    // takes return value and appends it to the tweets container
   
+    const $container = $('.tweets-container');
+    $container.empty(); // tweets container is emptying out previous hard-coded tweets
+  
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet); // tweet here is an individual tweet from the data array
+      $container.prepend($tweet);
+    }
+  };
+
+  // Get request with AJAX
+  const fetchTweets = () => {
+    $.ajax('/tweets', {
+      method: "GET"
+    }).then(function(tweetsJSON) {
+      renderTweets(tweetsJSON);
+    });
+
+  };
+  // fetching tweets on page load
+  fetchTweets();
+
   const createTweetElement = (tweetData) => {
     let $tweet = $(`
   <article>
@@ -52,9 +76,8 @@ $(document).ready(function() {
   const $tweet = createTweetElement(tweetData);
 
   // Test / driver code (temporary)
-  console.log($tweet); // to see what it looks like
-  $('.tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-
+  //console.log($tweet);
+  $('.tweets-container').append($tweet);
 
   // Fake data taken from initial-tweets.json for array of tweets
   const data = [
@@ -82,21 +105,25 @@ $(document).ready(function() {
     }
   ];
 
-  const renderTweets = function(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
+  // Event handler AJAX .submit
+  $("#tweetForm").on("submit", function(event) {
+    event.preventDefault(); // prevent the default form submission behaviour
+    
+    const serializedData = $(this).serialize();
+    //console.log("serial data--------", serializedData);
 
-    const $container = $('.tweets-container');
-    $container.empty(); // tweets container is emptying out previous hard-coded tweets
+    // POST a new tweet - AJAX is adding serialized data
+    $.ajax('/tweets/', {
+      method: "POST",
+      data: serializedData
+    })
+      .then((resp) => {
+        $(".counter").val(140);
+        fetchTweets(renderTweets);
+        console.log("RESPONSE", resp);
+      });
 
-    for (const tweet of tweets) {
-      const $tweet = createTweetElement(tweet); // tweet here is an individual tweet from the data array
-      $container.prepend($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-    }
-  
-
-  };
-  renderTweets(data);
+    console.log("Hello!");
+  });
 
 });
