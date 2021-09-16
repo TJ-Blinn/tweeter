@@ -20,17 +20,18 @@ $(document).ready(function() {
     }
   };
 
-  // Get request with AJAX
-  const fetchTweets = () => {
+  // Get request with AJAX // fetching tweets from the http://localhost:8080/tweets page
+  const loadTweets = () => {
     $.ajax('/tweets', {
-      method: "GET"
+      method: "GET",
+      dataType: "json"
     }).then(function(tweetsJSON) {
       renderTweets(tweetsJSON);
     });
 
   };
   // fetching tweets on page load
-  fetchTweets();
+  loadTweets();
 
   const createTweetElement = (tweetData) => {
     let $tweet = $(`
@@ -58,53 +59,7 @@ $(document).ready(function() {
   `);
     return $tweet;
   };
-
-
-  // Test / driver code (temporary). Eventually will get this from the server.
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  };
-
-  const $tweet = createTweetElement(tweetData);
-
-  // Test / driver code (temporary)
-  //console.log($tweet);
-  $('.tweets-container').append($tweet);
-
-  // Fake data taken from initial-tweets.json for array of tweets
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
-
+  
   // Event handler AJAX .submit
   $("#tweetForm").on("submit", function(event) {
     event.preventDefault(); // prevent the default form submission behaviour
@@ -119,7 +74,7 @@ $(document).ready(function() {
     })
       .then((resp) => {
         //$(".counter").val(140);
-        fetchTweets(renderTweets);
+        loadTweets();
       });
 
     $('#tweetForm').each(function() {
