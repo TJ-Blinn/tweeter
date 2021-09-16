@@ -118,12 +118,13 @@ $(document).ready(function() {
       data: serializedData
     })
       .then((resp) => {
-        $(".counter").val(140);
+        //$(".counter").val(140);
         fetchTweets(renderTweets);
-        console.log("RESPONSE", resp);
       });
 
-    console.log("Hello!");
+    $('#tweetForm').each(function() {
+      this.reset();
+    });
   });
 
 });
