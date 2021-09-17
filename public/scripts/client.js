@@ -34,6 +34,17 @@ $(document).ready(function() {
   loadTweets();
 
   const createTweetElement = (tweetData) => {
+    
+    // escape function to prevent XSS attack
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+    const safeHTML = `<p>${escape(tweetData.content.text)}</p>`;
+    //<p>${escape(tweetData.content.text)}</p>
+
+
     let $tweet = $(`
   <article>
           <header>
@@ -41,7 +52,7 @@ $(document).ready(function() {
             <h3>${tweetData.user.name}</h3><span class="handle">${tweetData.user.handle}</span>
           </header>
           <main>
-            <p>${tweetData.content.text}</p>
+            <p>${safeHTML}</p>
           </main>
 
           <footer>
