@@ -90,6 +90,8 @@ $(document).ready(function() {
         $('textarea').val(undefined);
       });
 
+    //$("#tweet-text").val("");
+    $(".counter").val("140");
     
   });
 
