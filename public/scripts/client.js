@@ -59,27 +59,38 @@ $(document).ready(function() {
   `);
     return $tweet;
   };
-  
+
   // Event handler AJAX .submit
   $("#tweetForm").on("submit", function(event) {
     event.preventDefault(); // prevent the default form submission behaviour
     
-    const serializedData = $(this).serialize();
+    const serializedData = $("textarea").val();
+    //console.log(serializedData);
+    //let string = document.forms["#tweetForm"] ["text"].value;
+    
     //console.log("serial data--------", serializedData);
+
+    if (serializedData.length > 140) {
+      alert("Your tweet is over the 140 character limit!");
+      return;
+    }
+    if (serializedData.length === 0) {
+      alert("Your tweet is empty. In order to submit, please enter a minimum of 1 character");
+      return;
+    } 
 
     // POST a new tweet - AJAX is adding serialized data
     $.ajax('/tweets/', {
       method: "POST",
-      data: serializedData
+      data: {text: serializedData}
     })
       .then((resp) => {
         //$(".counter").val(140);
         loadTweets();
+        $('textarea').val(undefined);
       });
 
-    $('#tweetForm').each(function() {
-      this.reset();
-    });
+    
   });
 
 });

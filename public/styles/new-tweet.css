@@ -57,9 +57,15 @@ header {
   align-items: center;
 }
 
+/* replace with <img tag and url 
 header .fas {
   display: flex;
   justify-content: space-between;
+} */
+
+img {
+  display: flex;
+  margin-right: 10px;
 }
 
 footer {
