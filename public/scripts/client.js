@@ -34,7 +34,7 @@ $(document).ready(function() {
   loadTweets();
 
   const createTweetElement = (tweetData) => {
-    
+
     // escape function to prevent XSS attack
     const escape = function (str) {
       let div = document.createElement("div");
@@ -43,7 +43,6 @@ $(document).ready(function() {
     };
     const safeHTML = `<p>${escape(tweetData.content.text)}</p>`;
     //<p>${escape(tweetData.content.text)}</p>
-
 
     let $tweet = $(`
   <article>
@@ -57,7 +56,7 @@ $(document).ready(function() {
 
           <footer>
             <div>
-              <span class="timestamp">${tweetData.created_at}</span>
+              <span class="timestamp">${timeago.format(tweetData.created_at)}</span>
               <div class="footer_icons">
                 <i class="fas fa-flag"></i>
                 <i class="fas fa-retweet"></i>
@@ -76,19 +75,24 @@ $(document).ready(function() {
     event.preventDefault(); // prevent the default form submission behaviour
     
     const serializedData = $("textarea").val();
-    //console.log(serializedData);
-    //let string = document.forms["#tweetForm"] ["text"].value;
     
-    //console.log("serial data--------", serializedData);
-
     if (serializedData.length > 140) {
-      alert("Your tweet is over the 140 character limit!");
+      $('.form-validation').slideUp();
+      $('.form-validation').text("Your tweet is over the 140 character limit!").addClass('.redCounter').slideDown(500);
+      //alert("Your tweet is over the 140 character limit!");
       return;
     }
+
     if (serializedData.length === 0) {
-      alert("Your tweet is empty. In order to submit, please enter a minimum of 1 character");
+      $('.form-validation').slideUp();
+      $('.form-validation').text("Your tweet is empty. In order to submit, please enter a minimum of 1 character").slideDown(500);
+      // $('#error').show();
+      //alert("Your tweet is empty. In order to submit, please enter a minimum of 1 character");
       return;
-    } 
+    }
+
+    $('.form-validation').slideUp();
+
 
     // POST a new tweet - AJAX is adding serialized data
     $.ajax('/tweets/', {
@@ -101,9 +105,14 @@ $(document).ready(function() {
         $('textarea').val(undefined);
       });
 
+    // hide error message alerts
+    // $('#warning').hide();
+    // $('#error').hide();
+
     //$("#tweet-text").val("");
     $(".counter").val("140");
     
   });
+
 
 });

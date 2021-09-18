@@ -30,6 +30,7 @@ html {
   border-left: none;
   border-right: none;
   margin-bottom: 25px;
+  margin-top: 100px;
 }
 
 .new-tweet textarea::placeholder {
@@ -43,10 +44,11 @@ color: white;
 border: none;
 padding: 10px 10px;
 font-weight: 900;
+margin-bottom: 70px;
 }
 
 /* color for counter from composer-char-counter.js file*/
-.red {
+.redCounter {
   color: red; 
 }
 
@@ -91,7 +93,7 @@ footer div {
 article {
   border:solid;
   padding: 15px;
-  
+  margin-bottom: 40px;
 }
 .handle {
   margin-left: auto;
@@ -113,3 +115,47 @@ article:hover {
 .footer_icons i:hover {
   color:lightskyblue;
 }
+
+/* Validation alert messages !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.error {
+  border: 1px solid;
+  margin: 10px auto;
+  padding: 15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  max-width: 460px;
+  color: #D8000C;
+	background-color: #FFBABA;
+}
+
+.error:before{
+  font-family: FontAwesome;
+  content: '\f057';
+  font-size: 24px;
+  color: #D8000C;
+}
+
+.fas.fa-times {
+  color: #daa22d
+}
+
+.warning {
+  border: 1px solid;
+  margin: 10px auto;
+  padding: 15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  max-width: 460px;
+	color: #9F6000;
+	background-color: #FEEFB3;
+}
+
+  .warning:before {
+    font-family: FontAwesome;
+    content: '\f057';
+    font-size: 24px;
+  }
+
+  .fas.fa-exclamation-triangle {
+    color: #daa22d;
+  }

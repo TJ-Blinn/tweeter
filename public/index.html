@@ -39,6 +39,11 @@
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+  <!-- Timeago library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous"></script>
+
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -74,12 +79,19 @@
   <main class="container">
 
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
+      <h2 class="form-validation"></h2>
       <form id="tweetForm" action="/tweets/" method="POST">
         <!-- <label for="tweet-text"> What are you humming about?</label> -->
         <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
         <div>
           <button type="submit">Tweet</button>
+          <!-- validation error messages -->
+          <!-- <div class="error">Your tweet is empty. In order to submit, please enter a minimum of 1 character</div>
+          <i class="fas fa-times"></i>
+
+          <div class="warning">Your tweet is over the 140 character limit!</div>
+          <i class="fas fa-exclamation-triangle"></i> -->
+
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
 
