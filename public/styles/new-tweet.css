@@ -117,45 +117,15 @@ article:hover {
 }
 
 /* Validation alert messages !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-.error {
-  border: 1px solid;
-  margin: 10px auto;
-  padding: 15px 10px 15px 50px;
-  background-repeat: no-repeat;
-  background-position: 10px center;
-  max-width: 460px;
+
+.form-validation {
+  display: none;
+  margin: 10px 0px;
+  margin-top: 30px;
+  padding:12px;
+  border-radius:.5em; 
+  box-shadow:1px 1px 3px #888;
+  font-size: 30px;
   color: #D8000C;
 	background-color: #FFBABA;
-}
-
-.error:before{
-  font-family: FontAwesome;
-  content: '\f057';
-  font-size: 24px;
-  color: #D8000C;
-}
-
-.fas.fa-times {
-  color: #daa22d
-}
-
-.warning {
-  border: 1px solid;
-  margin: 10px auto;
-  padding: 15px 10px 15px 50px;
-  background-repeat: no-repeat;
-  background-position: 10px center;
-  max-width: 460px;
-	color: #9F6000;
-	background-color: #FEEFB3;
-}
-
-  .warning:before {
-    font-family: FontAwesome;
-    content: '\f057';
-    font-size: 24px;
-  }
-
-  .fas.fa-exclamation-triangle {
-    color: #daa22d;
   }

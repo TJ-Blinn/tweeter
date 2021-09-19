@@ -76,6 +76,7 @@ $(document).ready(function() {
     
     const serializedData = $("textarea").val();
     
+
     if (serializedData.length > 140) {
       $('.form-validation').slideUp();
       $('.form-validation').text("Your tweet is over the 140 character limit!").addClass('.redCounter').slideDown(500);
