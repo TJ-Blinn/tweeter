@@ -15,9 +15,9 @@ $(document).ready(function() {
     $("output.counter").html(charRemaining);
 
     if (charRemaining < 0) {
-      $("output.counter").addClass("redCounter");
+      $("output.counter").addClass("red-counter");
     } else {
-      $("output.counter").removeClass("redCounter");
+      $("output.counter").removeClass("red-counter");
     }
 
   });

@@ -76,24 +76,17 @@ $(document).ready(function() {
     
     const serializedData = $("textarea").val();
     
-
-    if (serializedData.length > 140) {
-      $('.form-validation').slideUp();
-      $('.form-validation').text("Your tweet is over the 140 character limit!").addClass('.redCounter').slideDown(500);
-      //alert("Your tweet is over the 140 character limit!");
-      return;
-    }
-
-    if (serializedData.length === 0) {
-      $('.form-validation').slideUp();
-      $('.form-validation').text("Your tweet is empty. In order to submit, please enter a minimum of 1 character").slideDown(500);
-      // $('#error').show();
-      //alert("Your tweet is empty. In order to submit, please enter a minimum of 1 character");
-      return;
-    }
-
     $('.form-validation').slideUp();
 
+    if (serializedData.length > 140) {
+      $('.form-validation').text("🛑 Your tweet is over the 140 character limit!").addClass('red-counter warning').slideDown(500);
+      $(".form-validation").removeClass("error");
+      return;
+    } else if (serializedData.length === 0) {
+      $('.form-validation').text("⚠️ Your tweet is empty. In order to submit, please enter a minimum of 1 character").addClass('error').slideDown(500);
+      $(".form-validation").removeClass("red-counter warning");
+      return;
+    }
 
     // POST a new tweet - AJAX is adding serialized data
     $.ajax('/tweets/', {
@@ -106,14 +99,18 @@ $(document).ready(function() {
         $('textarea').val(undefined);
       });
 
-    // hide error message alerts
-    // $('#warning').hide();
-    // $('#error').hide();
-
-    //$("#tweet-text").val("");
+    // counter reset to 140
     $(".counter").val("140");
     
   });
 
 
 });
+
+const number = 5;
+
+if (number > 6) {
+  console.log('greater than 6')
+} else if (number < 5) {
+  console.log('less than 5')
+}
