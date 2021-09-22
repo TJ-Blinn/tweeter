@@ -1,17 +1,13 @@
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+
 .nav-container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  background-color: #4056A1;
+  justify-content: space-around;
+  background-color: transparent;
+  background-color: #d79923;
+  background-image: 
+    url("./images/batthern.png");
   color: #ffff;
   font-family: 'Bungee', cursive, sans-serif;
   height: 120px;
@@ -54,3 +50,24 @@ html {
   color:red;
 }
 
+/************ Laptops / Desktops: minimum width of 1024px *****************/
+
+@media only screen and (min-width: 1024px) {
+  
+  .nav-container {
+    background-color: #4056A1;    
+}
+  
+#desktop-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+header.image {
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+}
