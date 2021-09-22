@@ -121,7 +121,7 @@ article:hover {
 .error {
   border: 1px solid;
   margin: 10px auto;
-  margin-top: 30px;
+  margin-top: 90px;
   padding: 15px 10px 15px 50px;
   border-radius:.5em; 
   box-shadow:1px 1px 3px #888;
@@ -132,7 +132,7 @@ article:hover {
  .warning {
   border: 1px solid;
   margin: 10px auto;
-  margin-top: 30px;
+  margin-top: 90px;
   padding: 15px 10px 15px 50px;
   border-radius:.5em; 
   box-shadow:1px 1px 3px #888;
