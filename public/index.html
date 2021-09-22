@@ -76,19 +76,16 @@
     </header>
 
 
-    <!-- Page-specific (main) content here -->
+    <!-- Page-specific - main - content here -->
     <main class="container">
-
       <section class="new-tweet">
         <h2 class="form-validation"></h2>
         <form id="tweetForm" action="/tweets/" method="POST">
-          <!-- <label for="tweet-text"> What are you humming about?</label> -->
           <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
           <div>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
-
         </form>
 
         <!-- new section container for all the tweets -->

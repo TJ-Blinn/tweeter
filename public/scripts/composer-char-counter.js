@@ -1,11 +1,9 @@
-// document var exists in browser AND in HTML file that is calling it.
 /* eslint-disable no-undef */
 
 $(document).ready(function() {
 
   $("#tweet-text").on('input', function() {
-    //console.log(event.target.value);
-    console.log("Input Event has fired!");
+    //console.log("Input Event has fired!");
 
     const maxLength = 140;
     const currentLength = $(this).val().length;

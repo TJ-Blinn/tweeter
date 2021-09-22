@@ -7,12 +7,10 @@
 $(document).ready(function() {
 
   const renderTweets = function(tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
+    // calls createTweetElement for each tweet, takes return value and prepends it to the tweets container
   
     const $container = $('.tweets-container');
-    $container.empty(); // tweets container is emptying out previous hard-coded tweets
+    $container.empty();
   
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet); // tweet here is an individual tweet from the data array
@@ -33,16 +31,16 @@ $(document).ready(function() {
   // fetching tweets on page load
   loadTweets();
 
+  // escape function to prevent XSS attack
   const createTweetElement = (tweetData) => {
-
-    // escape function to prevent XSS attack
+    
     const escape = function (str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     };
     const safeHTML = `<p>${escape(tweetData.content.text)}</p>`;
-    //<p>${escape(tweetData.content.text)}</p>
+    
 
     let $tweet = $(`
   <article>
@@ -99,18 +97,10 @@ $(document).ready(function() {
         $('textarea').val(undefined);
       });
 
-    // counter reset to 140
+    // counter reset to 140 characters
     $(".counter").val("140");
     
   });
 
 
 });
-
-const number = 5;
-
-if (number > 6) {
-  console.log('greater than 6')
-} else if (number < 5) {
-  console.log('less than 5')
-}
