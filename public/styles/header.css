@@ -1,4 +1,7 @@
+
+
 .image {
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,4 +16,5 @@
 .image h2 {
   margin-top: 0;
 }
+
 
