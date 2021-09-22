@@ -16,16 +16,18 @@ This repository is the starter code for the project: Students will fork and clon
 - Express
 - Node 5.10.x or above
 
+
 ## Purpose
 **BEWARE: This app was designed for learning purposes. It is strictly intended for use as an exercise.**
+
 This project was created and published by me as part of my learnings at Lighthouse Labs.
 
 ## Screenshots
 
-!["TWEETER_screen_shot_desktop"] (https://raw.githubusercontent.com/TJ-Blinn/tweeter/master/docs/TWEETER_screen_shot_desktop.png)
+!["TWEETER screen shot desktop"] (https://raw.githubusercontent.com/TJ-Blinn/tweeter/master/docs/TWEETER_screen_shot_desktop.png)
 
-!["TWEETER_screen_shot_tablet"] (https://raw.githubusercontent.com/TJ-Blinn/tweeter/master/docs/TWEETER_screen_shot_tablet.png)
+!["TWEETER screen shot tablet"] (https://raw.githubusercontent.com/TJ-Blinn/tweeter/master/docs/TWEETER_screen_shot_tablet.png)
 
-!["TWEETER_screen_shot_error_alert"] (https://raw.githubusercontent.com/TJ-Blinn/tweeter/master/docs/TWEETER_screen_shot_error_alert.png)
+!["TWEETER screen shot error alert"] (https://raw.githubusercontent.com/TJ-Blinn/tweeter/master/docs/TWEETER_screen_shot_error_alert.png)
 
-!["TWEETER_screen_shot_warning_alert"] (https://raw.githubusercontent.com/TJ-Blinn/tweeter/master/docs/TWEETER_screen_shot_warning_alert.png)
+!["TWEETER screen shot warning alert"] (https://raw.githubusercontent.com/TJ-Blinn/tweeter/master/docs/TWEETER_screen_shot_warning_alert.png)
